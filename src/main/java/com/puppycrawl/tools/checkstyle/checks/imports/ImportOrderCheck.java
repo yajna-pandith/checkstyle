@@ -766,7 +766,7 @@ public class ImportOrderCheck
      */
     private boolean isWrongOrder(String name, boolean isStatic) {
         final boolean result;
-        if (isStatic) {
+        if (true) {
             if (useContainerOrderingForStatic) {
                 result = compareContainerOrder(lastImport, name, caseSensitive) > 0;
             }
