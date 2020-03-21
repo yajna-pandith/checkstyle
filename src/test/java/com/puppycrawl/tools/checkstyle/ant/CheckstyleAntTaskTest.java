@@ -353,7 +353,8 @@ public class CheckstyleAntTaskTest extends AbstractPathTestSupport {
         final CheckstyleAntTask.Formatter formatter = new CheckstyleAntTask.Formatter();
         final File outputFile = new File("target/ant_task_plain_output.txt");
         formatter.setTofile(outputFile);
-        final CheckstyleAntTask.FormatterType formatterType = new CheckstyleAntTask.FormatterType();
+        final CheckstyleAntTask.FormatterType
+                formatterType = new CheckstyleAntTask.FormatterType();
         formatterType.setValue("plain");
         formatter.setType(formatterType);
         formatter.createListener(null);
@@ -375,7 +376,7 @@ public class CheckstyleAntTaskTest extends AbstractPathTestSupport {
         assertThat(errorMessage, output.get(0), is(auditStartedMessage.getMessage()));
         assertThat(errorMessage, output.get(1), allOf(
                 startsWith("[WARN]"),
-                containsString("InputCheckstyleAntTaskError.java:4: "),
+                containsString("InputCheckstyleAntTaskError.java:4:1: "),
                 endsWith("@incomplete=Some javadoc [WriteTag]")));
         assertThat(errorMessage, output.get(2), allOf(
                 startsWith("[ERROR]"),
